@@ -1,6 +1,8 @@
 const { chromium } = require('playwright');
 const v8toIstanbul = require('v8-to-istanbul');
+const { promisify } = require('util');
 const fs = require('fs');
+const fsWriteFile = promisify(fs.writeFile);
 
 (async () => {
   const browser = await chromium.launch();
@@ -15,8 +17,7 @@ const fs = require('fs');
     await converter.load();
     converter.applyCoverage(entry.functions);
     const data = converter.toIstanbul();
-    // console.log(JSON.stringify(data), typeof data);
-    fs.writeFileSync('./coverage/js.json', JSON.stringify(data));
+    fsWriteFile('./coverage/js.json', JSON.stringify(data, null, 2), 'utf8');
   }
   await browser.close();
 })();

@@ -12,10 +12,10 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/)
 
 ## Run the Repo app locally
 
-1. git clone https://github.com/nmanikiran/playwright-demos.git
+1. git clone `https://github.com/nmanikiran/playwright-demos.git`
 
-1. cd playwright-demos
-1. node <filename>
+1. cd `playwright-demos`
+1. node `<filename>`
 
 ## Examples
 
