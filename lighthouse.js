@@ -7,13 +7,13 @@ const lighthouse = require('lighthouse');
   const wsEndpoint = browserServer.wsEndpoint();
   // Use web socket endpoint later to establish a connection.
   const browser = await chromium.connect({ wsEndpoint });
-  console.log(wsEndpoint);
+  // console.log(wsEndpoint);
   const { lhr } = await lighthouse(url, {
     port: new URL(wsEndpoint).port,
     output: 'json',
     logLevel: 'info',
   });
-  const scores = Object.keys(lhr.categories).map(c => {
+  const scores = Object.keys(lhr.categories).map((c) => {
     const categorey = lhr.categories[c];
     const { title, id, score } = categorey;
     return {

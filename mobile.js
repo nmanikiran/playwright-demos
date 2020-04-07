@@ -15,7 +15,7 @@ const iPhone11 = devices['iPhone 11 Pro'];
     await page.goto('https://maps.google.com');
     await page.click('text="Your location"');
     await page.waitForRequest(/.*preview\/pwa/);
-    await page.screenshot({ path: 'screenshot/colosseum-iphone.png' });
+    await page.screenshot({ path: 'screenshots/colosseum-iphone.png' });
   } catch (error) {
     console.log(error);
   }

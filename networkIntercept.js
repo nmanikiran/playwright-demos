@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
   page.on('pageerror', console.log);
 
   // Log and continue all network requests
-  page.route('**', route => {
+  page.route('**', (route) => {
     console.log(route.resourceType(), route.url());
     route.continue();
   });

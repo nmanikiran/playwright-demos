@@ -4,6 +4,7 @@ const scrapeMetatags = async () => {
   const defaultUrl = 'http://todomvc.com';
   const [, , url = defaultUrl] = process.argv;
   const isValidUrl = /^(ftp|http|https):\/\/[^ "]+$/.test(url);
+  let seoObj;
 
   if (!isValidUrl) {
     console.error('please pass valid URL as argument');
@@ -17,9 +18,10 @@ const scrapeMetatags = async () => {
   await page.goto(url, {
     waitUntil: 'domcontentloaded',
   });
+
   try {
-    const seoObj = await page.evaluate(() => {
-      const getMetatag = name => {
+    seoObj = await page.evaluate(() => {
+      const getMetatag = (name) => {
         const $metaName =
           document.querySelector(`meta[name=${name}]`) ||
           document.querySelector(`meta[name="og:${name}"]`) ||
@@ -37,9 +39,7 @@ const scrapeMetatags = async () => {
         // author: getMetatag('author'),
       };
     });
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (console.log);
 
   console.log(seoObj);
   await browser.close();

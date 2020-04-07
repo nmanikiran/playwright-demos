@@ -8,7 +8,7 @@ const playwright = require('playwright');
     page.on('pageerror', console.log);
     await page.goto('http://whatsmyuseragent.org/');
     const pageOptions = {
-      path: `screenshot/example-${browserType}.png`,
+      path: `screenshots/example-${browserType}.png`,
       type: 'png',
       fullPage: true,
     };

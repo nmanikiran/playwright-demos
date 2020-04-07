@@ -12,6 +12,5 @@ const { chromium } = require('playwright');
   await browser.stopTracing();
 
   await page.close();
-
   await browser.close();
 })();

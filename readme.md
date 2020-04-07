@@ -8,14 +8,14 @@ If you found this project useful, then please consider giving it a ⭐️ on Git
 
 ## Prerequisites
 
-If you are new to node.js, first install [node.js](https://nodejs.org/en/)
+If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 10.15.0`
 
 ## Run the Repo app locally
 
 1. git clone `https://github.com/nmanikiran/playwright-demos.git`
 
-1. cd `playwright-demos`
-1. node `<filename>`
+1. cd `playwright-demos` && `npm install`
+1. node `<filename>.js`
 
 ## Examples
 
@@ -29,10 +29,12 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/)
 1. [JS Code Coverage](./codeCoverage.js)
 1. [Mobile Emulation](./mobile.js)
 1. [Lighhouse / Audit](./lighthouse.js)
-1. [Frame(s)](./frame.js)
+1. [Page load Metric(s)](./pageLoadMetric.js)
 1. [Web Workers list](./webworker.js)
+1. [Frame(s)](./frame.js)
 1. [Timeline](./timeline-trace.js)
 1. [Color scheme change](./dark-mode.js)
+1. [Multi Step Form Submittion](./formSubmit.js)
 1. [Scraping](./Scraping.js)
 
 ## Contributing
