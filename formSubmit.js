@@ -14,14 +14,20 @@ const { chromium } = require('playwright');
   page.click('#demo-modal > div > div > div.modal-footer > button');
   await page.waitFor(1000);
   //  let wait to loaded
+  await page.evaluate(() => {
+    const service = document.querySelector('#select-service');
+    const service_options = service.querySelectorAll('option');
+    const selected_option = [...service_options].find(
+      (option) => option.innerText === 'Test Service',
+    );
+
+    selected_option.selected = true;
+  });
   await page.waitForSelector('#button-next-1');
   page.click('#button-next-1');
   //  load page 2
   await page.waitFor(1000);
-  await page.$('#button-next-2');
-  const availableHours = await page.$$(
-    '#available-hours > span.available-hour',
-  );
+  const availableHours = await page.$$('#available-hours  span.available-hour');
   if (availableHours.length) {
     page.click('#button-next-2');
   } else {
@@ -48,7 +54,7 @@ const { chromium } = require('playwright');
   await addressHandler.type('New york, USA', { delay: 100 });
   await cityHandler.type('Syracuse', { delay: 100 });
   await zipCodeHandler.type('13202', { delay: 100 });
-
+page.waitForEvent()
   await page.$('#button-next-3');
   page.click('#button-next-3');
 

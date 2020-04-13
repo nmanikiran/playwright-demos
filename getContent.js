@@ -7,7 +7,7 @@ const { webkit } = require('playwright');
   page.on('pageerror', console.log);
 
   await page.goto('http://whatsmyuseragent.org/', {
-    waitUntil: 'domcontentloaded',
+    waitUntil: 'networkidle0',
   });
 
   const html = await page.content();

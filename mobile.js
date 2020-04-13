@@ -2,7 +2,7 @@ const { webkit, devices } = require('playwright');
 const iPhone11 = devices['iPhone 11 Pro'];
 
 (async () => {
-  const browser = await webkit.launch();
+  const browser = await webkit.launch({ headless: false });
   try {
     const context = await browser.newContext({
       viewport: iPhone11.viewport,

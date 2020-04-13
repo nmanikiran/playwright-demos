@@ -16,7 +16,7 @@ const scrapeMetatags = async () => {
   page.on('pageerror', console.log);
 
   await page.goto(url, {
-    waitUntil: 'domcontentloaded',
+    waitUntil: 'networkidle0',
   });
 
   try {
@@ -39,7 +39,9 @@ const scrapeMetatags = async () => {
         // author: getMetatag('author'),
       };
     });
-  } catch (console.log);
+  } catch (error) {
+    console.log(error);
+  }
 
   console.log(seoObj);
   await browser.close();
