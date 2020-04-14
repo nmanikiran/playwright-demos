@@ -26,16 +26,28 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Create Webpage PDF](./generatePDF.js)
 1. [Intercept Newtwork](./networkIntercept.js)
 1. [Webpage Accessibility](./accessibility.js)
-1. [JS Code Coverage](./codeCoverage.js)
 1. [Mobile Emulation](./mobile.js)
 1. [Lighhouse / Audit](./lighthouse.js)
-1. [Page load Metric(s)](./pageLoadMetric.js)
 1. [Web Workers list](./webworker.js)
 1. [Frame(s)](./frame.js)
 1. [Timeline](./timeline-trace.js)
 1. [Color scheme change](./dark-mode.js)
 1. [Multi Step Form Submittion](./formSubmit.js)
-1. [Scraping](./Scraping.js)
+1. Metrics
+   - [Page load time(s)](./pageLoadTime.js)
+   - [Page Metrics](./metrics.js)
+   - [JS Code Coverage](./codeCoverage.js)
+1. Scraping
+   - [TodoMvc](./Scraping.js)
+1. CDPSessions
+   - [Play back Rate](./playbackRate.js)
+   - [Frame rate](./fps.js)
+
+## TODO
+
+    - Add test cases
+    - image snapshot tests
+    - Improve Docs
 
 ## Contributing
 
