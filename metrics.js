@@ -19,8 +19,9 @@ const calcUsedLength = (ruleUsage, stylesheet) => {
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
-  const page = await browser.newPage();
-  const client = await browser.pageTarget(page).createCDPSession();
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  const client = await context.newCDPSession(page);
   await client.send('DOM.enable');
   await client.send('CSS.enable');
   await client.send('CSS.startRuleUsageTracking');

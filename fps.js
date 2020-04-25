@@ -6,7 +6,7 @@ const path = require('path');
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  const client = await browser.pageTarget(page).createCDPSession();
+  const client = await context.newCDPSession(page);
   await client.send('Overlay.setShowFPSCounter', { show: true });
   await page.goto('https://fireship.io/');
 

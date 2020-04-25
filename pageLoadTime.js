@@ -3,13 +3,15 @@ const { chromium } = require('playwright');
 (async () => {
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
-  //   browser._client.send('Network.emulateNetworkConditions', {
-  //     offline: false,
-  //     latency: 200,
-  //     uploadThroughput: (780 * 1024) / 8,
-  //     downloadThroughput: (330 * 1024) / 8,
-  //   });
   const page = await context.newPage();
+  // const client = await context.newCDPSession(page);
+  // client.send('Network.emulateNetworkConditions', {
+  //   offline: false,
+  //   latency: 200,
+  //   uploadThroughput: (780 * 1024) / 8,
+  //   downloadThroughput: (330 * 1024) / 8,
+  // });
+
   const tic = Date.now();
   await page.goto('https://www.applaudsolutions.com/');
   console.log('\n ////////////////////////////////////////////// ');

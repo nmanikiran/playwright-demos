@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  const client = await browser.pageTarget(page).createCDPSession();
+   const client = await context.newCDPSession(page);
   await client.send('Animation.enable');
   client.on('Animation.animationCreated', () =>
     console.log('Animation created!'),

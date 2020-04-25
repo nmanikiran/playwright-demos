@@ -14,15 +14,8 @@ const { chromium } = require('playwright');
   page.click('#demo-modal > div > div > div.modal-footer > button');
   await page.waitFor(1000);
   //  let wait to loaded
-  await page.evaluate(() => {
-    const service = document.querySelector('#select-service');
-    const service_options = service.querySelectorAll('option');
-    const selected_option = [...service_options].find(
-      (option) => option.innerText === 'Test Service',
-    );
+  await page.selectOption('select#select-service', '1');
 
-    selected_option.selected = true;
-  });
   await page.waitForSelector('#button-next-1');
   page.click('#button-next-1');
   //  load page 2
@@ -54,7 +47,7 @@ const { chromium } = require('playwright');
   await addressHandler.type('New york, USA', { delay: 100 });
   await cityHandler.type('Syracuse', { delay: 100 });
   await zipCodeHandler.type('13202', { delay: 100 });
-page.waitForEvent()
+  page.waitForEvent();
   await page.$('#button-next-3');
   page.click('#button-next-3');
 

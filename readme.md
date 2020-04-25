@@ -39,6 +39,7 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
    - [JS Code Coverage](./codeCoverage.js)
 1. Scraping
    - [TodoMvc](./Scraping.js)
+   - [Amazon Price tracker](./amazonPriceMonitor.js)
 1. CDPSessions
    - [Play back Rate](./playbackRate.js)
    - [Frame rate](./fps.js)

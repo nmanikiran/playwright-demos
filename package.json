@@ -17,8 +17,10 @@
   "author": "Mani Kiran Nalabolu",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.8.2",
     "lighthouse": "^5.6.0",
-    "playwright": "^0.11.1",
+    "nodemailer": "^6.4.6",
+    "playwright": "^0.15.0",
     "v8-to-istanbul": "^4.1.3"
   }
 }
