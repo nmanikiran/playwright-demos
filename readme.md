@@ -27,22 +27,30 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Intercept Newtwork](./networkIntercept.js)
 1. [Webpage Accessibility](./accessibility.js)
 1. [Mobile Emulation](./mobile.js)
-1. [Lighhouse / Audit](./lighthouse.js)
 1. [Web Workers list](./webworker.js)
 1. [Frame(s)](./frame.js)
-1. [Timeline](./timeline-trace.js)
 1. [Color scheme change](./dark-mode.js)
-1. [Multi Step Form Submittion](./formSubmit.js)
-1. Metrics
-   - [Page load time(s)](./pageLoadTime.js)
-   - [Page Metrics](./metrics.js)
-   - [JS Code Coverage](./codeCoverage.js)
+1. Performance
+
+   - [Page load time(s)](./performance/pageLoadTime.js)
+   - [Timeline](./performance/timeline-trace.js)
+   - [Page Metrics](./performance/metrics.js)
+   - [JS Code Coverage](./performance/codeCoverage.js)
+   - [Frame rate](./performance/fps.js)
+
+1. PWA
+
+   - [Disable Javascript](./pwa/jsDisable.js)
+   - [Offline](./pwa/offline.js)
+   - [Lighhouse / Audit](./pwa/lighthouse.js)
+
 1. Scraping
-   - [TodoMvc](./Scraping.js)
-   - [Amazon Price tracker](./amazonPriceMonitor.js)
+   - [TodoMvc Meta Data](./Scraping/todoMvcMetaData.js)
+   - [Amazon Price tracker](./Scraping/amazonPriceMonitor.js)
 1. CDPSessions
    - [Play back Rate](./playbackRate.js)
-   - [Frame rate](./fps.js)
+1. Automation / E2E
+   - [Multi Step Form Submittion](./automate/formSubmit.js)
 
 ## TODO
 

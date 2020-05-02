@@ -4,10 +4,11 @@ const { chromium } = require('playwright');
 
 (async () => {
   const browser = await chromium.launch({});
-
   const page = await browser.newPage();
-
-  await browser.startTracing(page, { path: 'trace.json' });
+  await browser.startTracing(page, {
+    path: 'trace.json',
+    screenshots: true,
+  });
   await page.goto('https://www.google.com');
   await browser.stopTracing();
 

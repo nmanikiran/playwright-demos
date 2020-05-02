@@ -10,6 +10,17 @@ const path = require('path');
   await client.send('Overlay.setShowFPSCounter', { show: true });
   await page.goto('https://fireship.io/');
 
+  await page.screenshot({
+    path: 'screenshots/fps-before.jpeg',
+    type: 'jpeg',
+    clip: {
+      x: 0,
+      y: 0,
+      width: 370,
+      height: 370,
+    },
+  });
+
   // Do graphical regressions here by interacting with the page
   await client.send('Input.synthesizeScrollGesture', {
     x: 100,
@@ -19,7 +30,7 @@ const path = require('path');
   });
 
   await page.screenshot({
-    path: 'screenshots/fps.jpeg',
+    path: 'screenshots/fps-after.jpeg',
     type: 'jpeg',
     clip: {
       x: 0,
@@ -29,7 +40,10 @@ const path = require('path');
     },
   });
   console.log(
-    `Check the screenshot: ${path.join(__dirname, 'screenshots/fps.jpeg')}`,
+    `Check the screenshots at: ${path.join(
+      __dirname,
+      'screenshots',
+    )} fps-before.jpeg / fps-after.jpeg`,
   );
   await page.close();
   await browser.close();
