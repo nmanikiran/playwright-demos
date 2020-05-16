@@ -9,14 +9,14 @@ const { chromium } = require('playwright');
   );
   await page.emulateMedia({ colorScheme: 'light' });
 
-  await page.waitFor(200);
+  await page.waitForTimeout(200);
   await page.screenshot({
     path: 'screenshots/light.jpg',
     type: 'jpeg',
     omitBackground: true,
   });
   await page.emulateMedia({ colorScheme: 'dark' });
-  await page.waitFor(200);
+  await page.waitForTimeout(200);
   await page.screenshot({
     path: 'screenshots/dark.jpg',
     type: 'jpeg',

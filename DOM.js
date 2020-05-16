@@ -7,13 +7,13 @@ const { webkit } = require('playwright');
   page.on('pageerror', console.log);
   try {
     await page.goto('https://github.com/nmanikiran?tab=repositories', {
-      waitUntil: 'networkidle2',
+      waitUntil: 'networkidle',
     });
     await page.waitForSelector('#user-repositories-list li');
 
     const repos = await page.evaluate(() => {
       let links = document.querySelectorAll('#user-repositories-list li h3 a');
-      return Array.from(links).map(link => ({
+      return Array.from(links).map((link) => ({
         name: link.innerHTML.trim(),
         href: link.href,
       }));

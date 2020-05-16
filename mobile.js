@@ -5,10 +5,9 @@ const iPhone11 = devices['iPhone 11 Pro'];
   const browser = await webkit.launch({ headless: false });
   try {
     const context = await browser.newContext({
-      viewport: iPhone11.viewport,
-      userAgent: iPhone11.userAgent,
+      ...iPhone11,
       geolocation: { longitude: 78.2679616, latitude: 17.4126274 },
-      permissions: { 'https://www.google.com': ['geolocation'] },
+      permissions: ['geolocation'],
     });
     const page = await context.newPage();
     page.on('pageerror', console.log);

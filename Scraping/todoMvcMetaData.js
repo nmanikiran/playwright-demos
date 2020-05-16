@@ -16,7 +16,7 @@ const scrapeMetatags = async () => {
   page.on('pageerror', console.log);
 
   await page.goto(url, {
-    waitUntil: 'networkidle0',
+    waitUntil: 'networkidle',
   });
 
   try {

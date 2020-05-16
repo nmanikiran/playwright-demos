@@ -24,12 +24,12 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Web page Screnshot](./screenshot.js)
 1. [Access DOM](./DOM.js)
 1. [Create Webpage PDF](./generatePDF.js)
-1. [Intercept Newtwork](./networkIntercept.js)
 1. [Webpage Accessibility](./accessibility.js)
 1. [Mobile Emulation](./mobile.js)
 1. [Web Workers list](./webworker.js)
 1. [Frame(s)](./frame.js)
 1. [Color scheme change](./dark-mode.js)
+
 1. Performance
 
    - [Page load time(s)](./performance/pageLoadTime.js)
@@ -38,6 +38,10 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
    - [JS Code Coverage](./performance/codeCoverage.js)
    - [Frame rate](./performance/fps.js)
 
+1. Network
+
+   - [Intercept Newtwork](./network/networkIntercept.js)
+
 1. PWA
 
    - [Disable Javascript](./pwa/jsDisable.js)
@@ -45,10 +49,15 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
    - [Lighhouse / Audit](./pwa/lighthouse.js)
 
 1. Scraping
+
    - [TodoMvc Meta Data](./Scraping/todoMvcMetaData.js)
+   - [IMDB Movie list](./Scraping/imdb.js)
    - [Amazon Price tracker](./Scraping/amazonPriceMonitor.js)
+
 1. CDPSessions
+
    - [Play back Rate](./playbackRate.js)
+
 1. Automation / E2E
    - [Multi Step Form Submittion](./automate/formSubmit.js)
 

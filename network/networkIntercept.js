@@ -7,11 +7,11 @@ const { chromium } = require('playwright');
   page.on('pageerror', console.log);
 
   // Log and continue all network requests
-  page.route('**', (route) => {
-    console.log(route.resourceType(), route.url());
+  await page.route('**', (route, request) => {
+    console.log(request.method(), request.resourceType(), request.url());
     route.continue();
   });
 
-  await page.goto('http://todomvc.com');
+  await page.goto('https://playwright.dev/');
   await browser.close();
 })();

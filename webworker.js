@@ -6,9 +6,9 @@ const { chromium } = require('playwright');
   await page.goto(
     'https://michaeltreat.github.io/Web-Worker-Demo/html/web-worker.html',
   );
-  await page.waitFor(200);
+  await page.waitForTimeout(200);
   page.click('#begin');
-  await page.waitFor(200);
+  await page.waitForTimeout(200);
   page.on('worker', (worker) => {
     console.log('Worker created: ' + worker.url());
     worker.on('close', (worker) =>

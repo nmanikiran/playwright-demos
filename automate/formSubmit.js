@@ -12,14 +12,14 @@ const { chromium } = require('playwright');
     '#demo-modal > div > div > div.modal-footer > button',
   );
   page.click('#demo-modal > div > div > div.modal-footer > button');
-  await page.waitFor(1000);
+  await page.waitForTimeout(1000);
   //  let wait to loaded
   await page.selectOption('select#select-service', '1');
 
   await page.waitForSelector('#button-next-1');
   page.click('#button-next-1');
   //  load page 2
-  await page.waitFor(1000);
+  await page.waitForTimeout(1000);
   const availableHours = await page.$$('#available-hours  span.available-hour');
   if (availableHours.length) {
     page.click('#button-next-2');
@@ -27,11 +27,11 @@ const { chromium } = require('playwright');
     // TODO: loop recursively to get day
     const ele = await page.$('.ui-datepicker-today ~ td');
     ele.click();
-    await page.waitFor(500);
+    await page.waitForTimeout(500);
     page.click('#button-next-2');
   }
 
-  await page.waitFor(1000);
+  await page.waitForTimeout(1000);
   const firstNameHandler = await page.$('#first-name');
   const lastNameHandler = await page.$('#last-name');
   const emailHandler = await page.$('#email');
@@ -51,7 +51,7 @@ const { chromium } = require('playwright');
   await page.$('#button-next-3');
   page.click('#button-next-3');
 
-  await page.waitFor(1000);
+  await page.waitForTimeout(1000);
   await page.$('#book-appointment-submit');
 
   const [response] = await Promise.all([
@@ -67,6 +67,6 @@ const { chromium } = require('playwright');
   console.log('----------------------------------');
   console.log('Appointment created with  id:', result[1]);
   console.log('----------------------------------');
-
+  await page.waitForTimeout(1000);
   await browser.close();
 })();
