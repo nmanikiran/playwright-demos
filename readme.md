@@ -53,6 +53,7 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
    - [TodoMvc Meta Data](./Scraping/todoMvcMetaData.js)
    - [IMDB Movie list](./Scraping/imdb.js)
    - [Amazon Price tracker](./Scraping/amazonPriceMonitor.js)
+   - [Infinite Scroll Data](./Scraping/InfiniteScrollitems.js)
 
 1. CDPSessions
 
