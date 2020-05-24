@@ -15,7 +15,7 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. git clone `https://github.com/nmanikiran/playwright-demos.git`
 
 1. cd `playwright-demos` && `npm install`
-1. node `<filename>.js`
+1. npm start | yarn start | node `<filename>.js`
 
 ## Examples
 
@@ -51,8 +51,8 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. Scraping
 
    - [TodoMvc Meta Data](./Scraping/todoMvcMetaData.js)
-   - [IMDB Movie list](./Scraping/imdb.js)
-   - [Amazon Price tracker](./Scraping/amazonPriceMonitor.js)
+   - [IMDB Movie List](./Scraping/imdb.js)
+   - [Amazon Price Tracker](./Scraping/amazonPriceMonitor.js)
    - [Infinite Scroll Data](./Scraping/InfiniteScrollitems.js)
 
 1. CDPSessions
