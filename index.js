@@ -29,6 +29,15 @@ const choices = [
     { title: 'Automation / E2E - Multi Step Form Submittion - ', value: './automate/formSubmit.js' },
 ];
 
+const twirlTimer = () => {
+    const P = ['\\', '|', '/', '-'];
+    let x = 0;
+    return setInterval(() => {
+        process.stdout.write('\r' + P[x++]);
+        x &= 3;
+    }, 250);
+};
+
 async function start() {
     const response = await prompts([
         {
@@ -40,8 +49,13 @@ async function start() {
     ]);
 
     if (response.runExample) {
+        const timer = twirlTimer();
         const proc = fork(response.runExample);
-        proc.on('close', start);
+        proc.on('close', () => {
+            process.stdout.write('');
+            clearInterval(timer);
+            start();
+        });
     }
 }
 
