@@ -24,7 +24,7 @@ const choices = [
     { title: 'Scraping - TodoMvc Meta Data', value: './Scraping/todoMvcMetaData.js' },
     { title: 'Scraping - IMDB Movie List', value: './Scraping/imdb.js' },
     { title: 'Scraping - Amazon Price Tracker', value: './Scraping/amazonPriceMonitor.js' },
-    { title: 'Scraping - Infinite Scroll Data', value: './Scraping/InfiniteScrollitems.js' },
+    { title: 'Scraping - Infinite Scroll Data', value: './Scraping/InfiniteScrollItems.js' },
     { title: 'CDPSessions - Play back Rate', value: './playbackRate.js' },
     { title: 'Automation / E2E - Multi Step Form Submittion - ', value: './automate/formSubmit.js' },
 ];
