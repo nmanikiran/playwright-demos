@@ -21,8 +21,11 @@
     "cron": "^1.8.2",
     "lighthouse": "^6.1.1",
     "nodemailer": "^6.4.10",
-    "playwright": "^1.2.0",
+    "playwright": "^1.2.1",
     "prompts": "^2.3.2",
     "v8-to-istanbul": "^4.1.4"
+  },
+  "devDependencies": {
+    "axe-core": "^3.5.5"
   }
 }

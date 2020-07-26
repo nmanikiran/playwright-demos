@@ -24,11 +24,15 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Web page Screnshot](./screenshot.js)
 1. [Access DOM](./DOM.js)
 1. [Create Webpage PDF](./generatePDF.js)
-1. [Webpage Accessibility](./accessibility.js)
 1. [Mobile Emulation](./mobile.js)
 1. [Web Workers list](./webworker.js)
 1. [Frame(s)](./frame.js)
 1. [Color scheme change](./dark-mode.js)
+
+1. Accessibility
+
+   - [Webpage Accessibility](./accessibility/accessibility-tree.js)
+   - [Accessibility Report](./accessibility/axe-report.js)
 
 1. Performance
 

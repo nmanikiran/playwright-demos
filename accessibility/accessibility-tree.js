@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
 
   page.on('pageerror', console.log);
 
-  await page.goto('https://fireship.io/');
+  await page.goto('https://gocovid19.netlify.app');
 
   const snapshot = await page.accessibility.snapshot();
   console.log(snapshot);
