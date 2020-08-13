@@ -65,6 +65,8 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 
 1. Automation / E2E
    - [Multi Step Form Submittion](./automate/formSubmit.js)
+1. Visual Testing
+   - [Record video](./visual-testing.js)
 
 ## TODO
 
