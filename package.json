@@ -23,7 +23,9 @@
     "cron": "^1.8.2",
     "lighthouse": "^6.4.1",
     "nodemailer": "^6.4.14",
+    "pixelmatch": "^5.2.1",
     "playwright": "^1.5.1",
+    "pngjs": "^5.0.0",
     "prompts": "^2.3.2",
     "v8-to-istanbul": "^4.1.4"
   }
