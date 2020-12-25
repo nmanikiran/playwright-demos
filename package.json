@@ -22,8 +22,8 @@
     "axe-core": "^3.5.5",
     "cron": "^1.8.2",
     "lighthouse": "^6.4.1",
-    "nodemailer": "^6.4.13",
-    "playwright": "^1.4.2",
+    "nodemailer": "^6.4.14",
+    "playwright": "^1.5.1",
     "prompts": "^2.3.2",
     "v8-to-istanbul": "^4.1.4"
   }
