@@ -9,9 +9,12 @@ const { chromium } = require('playwright');
   page.on('pageerror', console.log);
   //  Close model
   await page.waitForSelector(
-    '#demo-modal > div > div > div.modal-footer > button',
+    'body > div.modal.fade.in.show > div > div > div.modal-footer > button',
   );
-  page.click('#demo-modal > div > div > div.modal-footer > button');
+  await page.waitForTimeout(1000);
+  page.click(
+    'body > div.modal.fade.in.show > div > div > div.modal-footer > button',
+  );
   await page.waitForTimeout(1000);
   //  let wait to loaded
   await page.selectOption('select#select-service', '1');
@@ -26,7 +29,7 @@ const { chromium } = require('playwright');
   } else {
     // TODO: loop recursively to get day
     const ele = await page.$('.ui-datepicker-today ~ td');
-    ele.click();
+    ele?.click();
     await page.waitForTimeout(500);
     page.click('#button-next-2');
   }
@@ -68,5 +71,6 @@ const { chromium } = require('playwright');
   console.log('Appointment created with  id:', result[1]);
   console.log('----------------------------------');
   await page.waitForTimeout(1000);
+  await page.close();
   await browser.close();
 })();

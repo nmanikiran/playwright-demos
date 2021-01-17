@@ -8,7 +8,7 @@ const url =
 const getCurrentPrice = async (page) => {
   await page.reload();
   let currentPrice = await page.evaluate(() => {
-    const $el = document.querySelector('#priceblock_ourprice');
+    const $el = document.querySelector('#priceblock_dealprice');
     const dollarPrice = $el ? $el.innerText : 0;
     return Number(dollarPrice.replace(/[^0-9.-]+/g, ''));
   });
