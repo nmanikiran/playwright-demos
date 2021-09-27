@@ -28,6 +28,7 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Web Workers list](./webworker.js)
 1. [Frame(s)](./frame.js)
 1. [Color scheme change](./dark-mode.js)
+1. [Cookies](./cookies.js)
 
 1. Accessibility
 
