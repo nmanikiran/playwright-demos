@@ -29,6 +29,7 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 1. [Frame(s)](./frame.js)
 1. [Color scheme change](./dark-mode.js)
 1. [Cookies](./cookies.js)
+1. [File Upload](./fileUpload.js)
 
 1. Accessibility
 
@@ -45,7 +46,8 @@ If you are new to node.js, first install [node.js](https://nodejs.org/en/) `>= 1
 
 1. Network
 
-   - [Intercept Newtwork](./network/networkIntercept.js)
+   - [Log Newtwork Calls](./network/networkIntercept.js)
+   - [Intercept XHR with Mock](./network/interceptwithmock.js)
 
 1. PWA
 
