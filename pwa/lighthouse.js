@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const lighthouse = require('lighthouse');
 
 (async () => {
-  const url = 'https://gocovid19.netlify.app/';
+  const url = 'https://fireship.io/';
   const browserServer = await chromium.launchServer();
   const wsEndpoint = browserServer.wsEndpoint();
   // Use web socket endpoint later to establish a connection.

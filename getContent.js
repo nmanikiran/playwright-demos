@@ -6,7 +6,7 @@ const { webkit } = require('playwright');
   const page = await context.newPage();
   page.on('pageerror', console.log);
 
-  await page.goto('http://whatsmyuseragent.org/', {
+  await page.goto('https://whatmyuseragent.com/', {
     waitUntil: 'networkidle',
   });
 

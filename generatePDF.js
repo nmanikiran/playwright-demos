@@ -6,11 +6,12 @@ const { chromium } = require('playwright');
   const page = await context.newPage();
   await page.goto('https://javascript.info/generators');
   page.on('pageerror', console.log);
+  const title = await page.title();
 
   // https://github.com/microsoft/playwright/blob/master/docs/api.md#pagepdfoptions
 
   const pagePdfOptions = {
-    path: `${process.cwd()}/page.pdf`,
+    path: `assets/${title}.pdf`,
     margin: {
       top: '1in',
       bottom: '1in',

@@ -9,15 +9,21 @@ const { webkit } = require('playwright');
     await page.goto('https://www.imdb.com/chart/top/?sort=rk,asc&mode=simple', {
       waitUntil: 'networkidle',
     });
-    await page.waitForSelector('#main div.lister .lister-list');
+    await page.waitForSelector('main .ipc-page-grid .ipc-metadata-list');
 
     const movies = await page.evaluate(() => {
-      let list = document.querySelectorAll('#main div.lister .lister-list tr');
+      let list = document.querySelectorAll(
+        'main .ipc-page-grid .ipc-metadata-list li',
+      );
       return Array.from(list).map((link) => ({
-        name: link.querySelector('.titleColumn a').innerHTML.trim(),
-        poster: link.querySelector('.posterColumn img').src,
+        poster: link.querySelector('.cli-poster-container img').src,
+        name: link.querySelector('.cli-children a').innerText.trim(),
         rating: Number(
-          link.querySelector('.imdbRating strong').innerHTML.trim(),
+          link
+            .querySelector(
+              '.cli-children .ipc-rating-star .ipc-rating-star--rating',
+            )
+            .innerText.trim(),
         ),
       }));
     });

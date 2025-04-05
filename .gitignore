@@ -2,3 +2,12 @@ node_modules
 later-use.js
 
 Scraping/items.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+/screenshots
+/assets

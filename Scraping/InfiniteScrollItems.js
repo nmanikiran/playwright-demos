@@ -55,7 +55,7 @@ const scrapeInfiniteScrollItems = async (
 
   await page.goto('https://www.practo.com/Bangalore/doctors');
 
-  const items = (await scrapeInfiniteScrollItems(page, 100)) || [];
+  const items = (await scrapeInfiniteScrollItems(page, 50)) || [];
 
   // Save extracted items to a file.
   console.log(`Check items.json, Scrapped ${items.length} items.`);

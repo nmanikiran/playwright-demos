@@ -7,7 +7,7 @@ const choices = [
   { title: 'Web page Screnshot', value: './screenshot.js' },
   { title: 'Access DOM', value: './DOM.js' },
   { title: 'Create Webpage PDF', value: './generatePDF.js' },
-  { title: 'Webpage Accessibility', value: './accessibility.js' },
+  { title: 'Webpage Accessibility', value: './accessibility/axe-report.js' },
   { title: 'Mobile Emulation', value: './mobile.js' },
   { title: 'Web Workers list', value: './webworker.js' },
   { title: 'Frame(s)', value: './frame.js' },

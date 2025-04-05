@@ -22,5 +22,6 @@ const { chromium } = require('playwright');
     type: 'jpeg',
     omitBackground: true,
   });
+  console.log('check screenshots folder');
   await browser.close();
 })();

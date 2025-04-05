@@ -4,7 +4,6 @@
   "description": "playwright examples",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "engines": {
@@ -24,9 +23,14 @@
     "lighthouse": "^7.3.0",
     "nodemailer": "^6.4.14",
     "pixelmatch": "^5.2.1",
-    "playwright": "^1.7.1",
+    "playwright": "^1.51.1",
     "pngjs": "^5.0.0",
     "prompts": "^2.3.2",
     "v8-to-istanbul": "^4.1.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
   }
 }

@@ -20,7 +20,12 @@ let axeResults;
   });
 
   // add results to the collection of axe results
-  fs.writeFileSync('./axe.json', JSON.stringify(axeResults, null, 4));
+  if (!fs.existsSync('./assets')) {
+    fs.mkdirSync('./assets');
+    fs.writeFileSync('./assets/axe.json', JSON.stringify(axeResults, null, 4));
+  } else {
+    fs.writeFileSync('./assets/axe.json', JSON.stringify(axeResults, null, 4));
+  }
   console.log(`Check axe.json, logged all the accessibility violations.`);
   await browser.close();
 })();

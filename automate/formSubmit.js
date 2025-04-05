@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const { faker, fa } = require('@faker-js/faker');
 
 (async () => {
   const browser = await chromium.launch({ headless: false });
@@ -17,12 +18,7 @@ const { chromium } = require('playwright');
   );
   await page.waitForTimeout(1000);
   //  let wait to loaded
-  await page.selectOption('select#select-service', '1');
 
-  await page.waitForSelector('#button-next-1');
-  page.click('#button-next-1');
-  //  load page 2
-  await page.waitForTimeout(1000);
   const availableHours = await page.$$('#available-hours  span.available-hour');
   if (availableHours.length) {
     page.click('#button-next-2');
@@ -43,13 +39,15 @@ const { chromium } = require('playwright');
   const cityHandler = await page.$('#city');
   const zipCodeHandler = await page.$('#zip-code');
 
-  await firstNameHandler.type('Tom', { delay: 100 });
-  await lastNameHandler.type('Cruise', { delay: 100 });
-  await emailHandler.type('tom@cruise.com', { delay: 100 });
-  await phoneNumberHandler.type('+1-202-555-0153', { delay: 100 });
-  await addressHandler.type('New york, USA', { delay: 100 });
-  await cityHandler.type('Syracuse', { delay: 100 });
-  await zipCodeHandler.type('13202', { delay: 100 });
+  await firstNameHandler.fill(faker.person.firstName(), { delay: 100 });
+  await lastNameHandler.fill(faker.person.lastName(), { delay: 100 });
+  await emailHandler.fill(faker.internet.email(), { delay: 100 });
+  await phoneNumberHandler.fill(faker.phone.number({ style: 'human' }), {
+    delay: 100,
+  });
+  await addressHandler.fill(faker.location.streetAddress(), { delay: 100 });
+  await cityHandler.fill(faker.location.city(), { delay: 100 });
+  await zipCodeHandler.fill(faker.location.zipCode(), { delay: 100 });
   page.waitForEvent();
   await page.$('#button-next-3');
   page.click('#button-next-3');
@@ -64,7 +62,7 @@ const { chromium } = require('playwright');
 
   const resurl = response.request().url();
   var regEx = new RegExp(
-    /https:\/\/demo.easyappointments.org\/index.php\/appointments\/book_success\/(\d+)/,
+    /https:\/\/demo.easyappointments.org\/index.php\/booking_confirmation\/of\/(\d+)/,
   );
   const result = resurl.match(regEx);
   console.log('----------------------------------');

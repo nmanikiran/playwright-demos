@@ -12,6 +12,7 @@ const iPhone11 = devices['iPhone 11 Pro'];
     const page = await context.newPage();
     page.on('pageerror', console.log);
     await page.goto('https://maps.google.com');
+    await page.getByText('Go back to web').click();
     await page.click('text="Your location"');
     await page.waitForRequest(/.*preview\/pwa/);
     await page.screenshot({ path: 'screenshots/colosseum-iphone.png' });
