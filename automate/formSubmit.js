@@ -42,32 +42,26 @@ const { faker, fa } = require('@faker-js/faker');
   await firstNameHandler.fill(faker.person.firstName(), { delay: 100 });
   await lastNameHandler.fill(faker.person.lastName(), { delay: 100 });
   await emailHandler.fill(faker.internet.email(), { delay: 100 });
-  await phoneNumberHandler.fill(faker.phone.number({ style: 'human' }), {
+  await phoneNumberHandler.fill(faker.phone.number({ style: 'national' }), {
     delay: 100,
   });
   await addressHandler.fill(faker.location.streetAddress(), { delay: 100 });
   await cityHandler.fill(faker.location.city(), { delay: 100 });
   await zipCodeHandler.fill(faker.location.zipCode(), { delay: 100 });
-  page.waitForEvent();
-  await page.$('#button-next-3');
-  page.click('#button-next-3');
+
+  await page.locator('#button-next-3').click();
 
   await page.waitForTimeout(1000);
-  await page.$('#book-appointment-submit');
+  await page.locator('#book-appointment-submit').click();
+  const request = await page.waitForRequest((request) => request);
+  const url = request.url();
 
-  const [response] = await Promise.all([
-    page.waitForNavigation(), // This will set the promise to wait for navigation events
-    page.click('#book-appointment-submit'), // After clicking the submit
-  ]);
+  const appointmentId = url.split('/').pop();
 
-  const resurl = response.request().url();
-  var regEx = new RegExp(
-    /https:\/\/demo.easyappointments.org\/index.php\/booking_confirmation\/of\/(\d+)/,
-  );
-  const result = resurl.match(regEx);
   console.log('----------------------------------');
-  console.log('Appointment created with  id:', result[1]);
+  console.log('Appointment created with  id:', appointmentId);
   console.log('----------------------------------');
+
   await page.waitForTimeout(1000);
   await page.close();
   await browser.close();

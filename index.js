@@ -3,16 +3,24 @@ const { fork } = require('child_process');
 
 const choices = [
   { title: 'Launch Webpage', value: './launchPage.js' },
+  { title: 'Webpage Events', value: './events.js' },
   { title: 'Web Page Content', value: './getContent.js' },
   { title: 'Web page Screnshot', value: './screenshot.js' },
   { title: 'Access DOM', value: './DOM.js' },
   { title: 'Create Webpage PDF', value: './generatePDF.js' },
-  { title: 'Webpage Accessibility', value: './accessibility/axe-report.js' },
   { title: 'Mobile Emulation', value: './mobile.js' },
   { title: 'Web Workers list', value: './webworker.js' },
   { title: 'Frame(s)', value: './frame.js' },
   { title: 'Color scheme change', value: './dark-mode.js' },
   { title: 'Download File', value: './download.js' },
+  {
+    title: 'Accessibility - Webpage Axe report',
+    value: './accessibility/axe-report.js',
+  },
+  {
+    title: 'Accessibility - Accessibility tree',
+    value: './accessibility/accessibility-tree.js',
+  },
   {
     title: 'Performance - Page load time(s)',
     value: './performance/pageLoadTime.js',
@@ -27,6 +35,10 @@ const choices = [
   {
     title: 'Network - Intercept Newtwork',
     value: './network/networkIntercept.js',
+  },
+  {
+    title: 'Network - Intercept With Mock Data',
+    value: './network/interceptwithmock.js',
   },
   { title: 'PWA - Disable Javascript', value: './pwa/jsDisable.js' },
   { title: 'PWA - Offline', value: './pwa/offline.js' },
@@ -48,6 +60,10 @@ const choices = [
   {
     title: 'Automation / E2E - Multi Step Form Submittion - ',
     value: './automate/formSubmit.js',
+  },
+  {
+    title: 'Visual Tesing - Video ',
+    value: './visual-testing.js',
   },
 ];
 

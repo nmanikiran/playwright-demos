@@ -10,22 +10,24 @@ const { chromium } = require('playwright');
     videoSize: { width: 1024, height: 768 }, // downscale
   });
   const page = await context.newPage();
-  await page.goto('https://gocovid19.netlify.app/');
+  await page.goto('https://fireship.io');
   await page.waitForTimeout(1000);
-  await page.click(`[href$="/WHO"]`);
+  await page.click(`[href$="/pro"]`);
 
   await page.waitForTimeout(1000);
-  await page.click(`[href$="/symptoms"]`);
+  await page.click(`[href$="/lessons"]`);
 
   await page.waitForTimeout(1000);
-  await page.click(`[href$="/info"]`);
+  await page.click(`[href$="/courses"]`);
 
   await page.waitForTimeout(1000);
-  await page.click(`[href$="/faq"]`);
+  await page.click(`[href$="/snippets"]`);
+  await page.waitForTimeout(1000);
+  await page.click(`[href$="/tags"]`);
 
   await page.waitForTimeout(1000);
   // ... perform actions
   await page.close();
-  fs.renameSync(await page.video().path(), 'visual-testing.webm');
+  fs.renameSync(await page.video().path(), './assets/visual-testing.webm');
   await browser.close();
 })();
